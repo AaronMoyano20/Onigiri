@@ -2,9 +2,15 @@ body {
     background-color: #FAF8F5;
     color: #333333;
     font-size: 16px;
-    font-family: Arial, sans-serif;
+    /* Aplicación de Google Font Poppins para todo el sitio */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+h1, h2 {
+    /* Aplicación de Google Font Mochiy Pop One para los títulos principales */
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
 h1 {
@@ -19,11 +25,13 @@ h2 {
     font-size: 24px;
     text-align: left;
     text-decoration: underline;
+    margin-top: 20px;
 }
 
 h3 {
     color: #555555;
     font-size: 18px;
+    font-weight: 700;
     text-align: left;
     text-decoration: underline;
 }
@@ -32,13 +40,13 @@ p {
     color: #444444;
     font-size: 16px;
     text-align: justify;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 a {
     color: #D87093;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     margin-right: 12px;
     text-align: left;
 }
@@ -51,21 +59,14 @@ ul, ol {
     color: #333333;
     font-size: 15px;
     text-align: left;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 iframe {
     max-width: 100%;
     border-radius: 8px;
     display: block;
-}
-
-img, iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 15px auto;
 }
 
 .header {
@@ -81,7 +82,8 @@ img, iframe {
 
 .header .logo-img {
     width: 60px;
-    height: auto;
+    height: 60px;
+    object-fit: cover;
     border-radius: 50%;
     margin: 0;
 }
@@ -93,13 +95,15 @@ img, iframe {
 
 .nav-links {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
     background-color: #fff;
-    padding: 10px 15px;
+    padding: 12px 15px;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
 .nav-label {
@@ -111,7 +115,39 @@ img, iframe {
 .links-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
+}
+
+/* Estilo personalizado combinado con la clase .btn de Bootstrap */
+.btn-onigiri {
+    background-color: #D87093;
+    color: #ffffff !important;
+    border: none;
+    margin-right: 0;
+    transition: all 0.3s ease;
+}
+
+.btn-onigiri:hover {
+    background-color: #FCBBF5;
+    color: #333333 !important;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* CONTROL DE TAMAÑO UNIFORME PARA EL CARRUSEL */
+.carousel-img-uniforme {
+    height: 400px; /* Altura fija para todas las imágenes */
+    width: 100%;
+    object-fit: cover; /* Recorta la imagen proporcionalmente sin estirarla ni deformarla */
+    object-position: center;
+    margin: 0; /* Resetea márgenes generales */
+}
+
+/* Ajuste responsivo para celulares */
+@media (max-width: 576px) {
+    .carousel-img-uniforme {
+        height: 250px;
+    }
 }
 
 .social-container {
@@ -175,44 +211,30 @@ main {
 .footer-map h3, .footer-info h3 {
     text-align: center;
 }
-.btn-volver {
-    background-color: #D87093;
-    color: #ffffff !important;
-    padding: 8px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-}
 
-.btn-volver:hover {
-    background-color: #FCBBF5;
-    color: #333333 !important;
-}
-
-.social-contact-container {
+.recipe-flex-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
     flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
 }
 
-.social-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #333333;
-    gap: 10px;
-    margin: 0;
+.ingredients-column {
+    flex: 1;
+    min-width: 280px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #FCBBF5;
 }
 
-.social-img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.social-card:hover .social-img {
-    transform: scale(1.1);
+.preparation-column {
+    flex: 1.5;
+    min-width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #D87093;
 }
