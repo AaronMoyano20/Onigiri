@@ -238,3 +238,32 @@ main {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     border-top: 4px solid #D87093;
 }
+/* Contenedor de las tarjetas de redes sociales */
+.social-contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo para cada tarjeta individual de red social */
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #FCBBF5;
+    text-decoration: none;
+}
+
+/* Control estricto de tamaño para los iconos de redes sociales */
+.social-img {
+    width: 32px;         /* Ancho fijo pequeño para que sea un icono */
+    height: 32px;        /* Alto fijo para mantener la proporción */
+    object-fit: contain; /* Evita que la imagen se deforme */
+    margin: 0;
+}
